@@ -85,7 +85,7 @@ HTML_TEMPLATE = """
       border: none;
       border-radius: 12px;
       background-color: #2a2a2a;
-      color: white;
+      color: black;
       font-size: 16px;
     font-family: "EB Garamond", serif;
     }

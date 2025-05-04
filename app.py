@@ -36,13 +36,17 @@ HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>User Verification</title>
   <style>
     body {
+      background-image: url("https://i.postimg.cc/bwjbGrZq/noise.gif");
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: "EB Garamond", serif;
       background-color: #121212;
       color: #f2f2f2;
       display: flex;
@@ -51,12 +55,11 @@ HTML_TEMPLATE = """
       min-height: 100vh;
     }
     .container {
-      background-image: url('/static/psd/ezgif-15776c6e47f65e.gif');
       background-size: cover;
       background-position: center;
       width: 87%;
       max-width: 500px;
-      background: #1e1e1e;
+      background: #414141cb;;
       padding: 20px;
       border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -65,6 +68,7 @@ HTML_TEMPLATE = """
     h2 {
       text-align: center;
       margin-bottom: 20px;
+      font-family: "Playfair Display", serif;
     }
     img.logo {
       display: block;
@@ -72,6 +76,7 @@ HTML_TEMPLATE = """
       width: 100px;
       height: auto;
       border-radius: 20px;
+      align-item:left;
     }
     input, button, textarea {
       width: 90%;
@@ -80,8 +85,9 @@ HTML_TEMPLATE = """
       border: none;
       border-radius: 12px;
       background-color: #2a2a2a;
-      color: black;
+      color: white;
       font-size: 16px;
+    font-family: "EB Garamond", serif;
     }
     button {
       margin-left:10px;
@@ -152,7 +158,9 @@ HTML_TEMPLATE = """
   </script>
 </head>
 <body>
+
   <div class="container">
+    <img class="logo" src="https://i.postimg.cc/Kz9rB2dJ/dop.png" >
     <h2>User Verification</h2>
 
     {% with messages = get_flashed_messages() %}
@@ -214,7 +222,7 @@ def index():
         <html>
         <body style="font-family: Arial, sans-serif; background:#f9f9f9; padding:20px;">
           <div style="max-width:600px; margin:auto; background:white; border-radius:10px; padding:20px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-            <h2 style="text-align:center; color:#0000;">Email Verification From DOP</h2>
+            <h2 style="text-align:center; color:black;">Email Verification From DOP</h2>
             <p>Hello <strong>{name}</strong>,</p>
             <p>Use the OTP below to verify your email:</p>
             <div style="text-align:center; margin:30px 0;">
@@ -269,5 +277,5 @@ def submit():
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+  app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
